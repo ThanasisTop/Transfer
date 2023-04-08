@@ -299,6 +299,7 @@
 	});
 	$('#time_pick').timepicker();
 
+	$('#time_return').timepicker();
 
 
 })(jQuery);
