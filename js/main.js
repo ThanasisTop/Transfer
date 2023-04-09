@@ -294,7 +294,7 @@
 
 
 	$('#book_pick_date,#return_date').datepicker({
-	  'format': 'm/d/yyyy',
+	  'format': 'd/m/yyyy',
 	  'autoclose': true
 	});
 	$('#time_pick').timepicker();
