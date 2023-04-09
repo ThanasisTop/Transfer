@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body onload="indexOnLoad()">
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -69,35 +69,35 @@
           </div>
           <div class="col-lg-2 col"></div>
           <div class="col-lg-4 col-md-6 mt-0 mt-md-5 d-flex">
-          	<form action="#" class="request-form ftco-animate">
+          	<form action="#" class="request-form ftco-animate" id="indexBookForm">
           		<h2>Make your trip</h2>
 	    				<div class="form-group">
 	    					<label for="" class="label">Pick-up location</label>
-	    					<select class="form-control" aria-label="select pick-up location">
-  									<option selected>City, Airport, Station, etc</option>
+	    					<select id="pick-up-location" class="form-control" aria-label="select pick-up location" >
+  									<option selected value="">City, Airport, Station, etc</option>
   									<optgroup label="Heraklion">
-  										<option value="1">Heraklion Town</option>
-  										<option value="2">Heraklion Airport</option>
-  										<option value="3">Malia</option>
+  										<option value="Heraklion Town">Heraklion Town</option>
+  										<option value="Heraklion Airport">Heraklion Airport</option>
+  										<option value="Malia">Malia</option>
   									</optgroup>
   									<optgroup label="Rethymnon">
-  										<option value="1">Rethymnon Town</option>
+  										<option value="Rethymnon Town">Rethymnon Town</option>
   									</optgroup>
-								</select>
+							</select>
 	    				</div>
 	    				<div class="form-group">
 	    					<label for="" class="label">Drop-off location</label>
-	    					<select class="form-control" aria-label="select drop-off location">
-  									<option selected>City, Airport, Station, etc</option>
+	    					<select id="drop-off-location" class="form-control" aria-label="select drop-off location" >
+  									<option selected value="">City, Airport, Station, etc</option>
   									<optgroup label="Heraklion">
-  										<option value="1">Heraklion Town</option>
-  										<option value="2">Heraklion Airport</option>
-  										<option value="3">Malia</option>
+  										<option value="Heraklion Town">Heraklion Town</option>
+  										<option value="Heraklion Town">Heraklion Town</option>
+  										<option value="Malia">Malia</option>
   									</optgroup>
   									<optgroup label="Rethymnon">
-  										<option value="1">Rethymnon Town</option>
+  										<option value="Rethymnon Town">Rethymnon Town</option>
   									</optgroup>
-								</select>
+							</select>
 	    				</div>
 	    				<div class="d-flex">
 	    					<div class="form-group mr-2">
@@ -106,7 +106,7 @@
 	              </div>
 	              <div class="form-group ml-2">
 	                <label for="" class="label">Return date</label>
-	                <input type="text" class="form-control" id="book_off_date" placeholder="Date">
+	                <input type="text" class="form-control" id="return_date" placeholder="Date">
 	              </div>
               </div>
               <div class="d-flex">
@@ -119,9 +119,15 @@
                 	<input type="text" class="form-control" id="time_return" placeholder="Time">
                 </div>
               </div>
+			  <div class="d-flex">
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" onclick="vm.disableField()" id="returnSwitch" >
+					<label class="custom-control-label" for="returnSwitch">Return</label>
+				</div>
+			  </div>
               <div class="form-group">
 	    					<label for="" class="label">People</label>
-	    					<select class="form-control" aria-label="select people">
+	    					<select class="form-control" id="people" aria-label="select people">
 	    						<option value="1">1</option>
 	    						<option value="2">2</option>
 	    						<option value="3">3</option>
@@ -133,7 +139,7 @@
 	    					</select>
 	    				</div>
 	            <div class="form-group">
-	              <input type="submit" value="Book" class="btn btn-primary py-3 px-4">
+	            	<a href="#" class="btn btn-primary py-3 px-4" role="button" onclick="createBooking()">Book</a>
 	            </div>
 	    			</form>
           </div>
@@ -767,6 +773,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+  <script src="js/script.js"></script>
+	
   </body>
 </html>

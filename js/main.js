@@ -293,7 +293,7 @@
   });
 
 
-	$('#book_pick_date,#book_off_date').datepicker({
+	$('#book_pick_date,#return_date').datepicker({
 	  'format': 'm/d/yyyy',
 	  'autoclose': true
 	});
