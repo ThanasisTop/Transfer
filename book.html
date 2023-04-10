@@ -42,7 +42,7 @@
             <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
             <!--<li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
             <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>-->
-            <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -54,7 +54,6 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
             <h1 class="mb-3 bread">Book</h1>
           </div>
         </div>
@@ -71,22 +70,28 @@
 				<div><i class="bi bi-geo-alt-fill"></i>&nbsp<b>Pick Up Location:</b> <span id="pick-up-location-result"></span></div>
 				<div><i class="bi bi-geo-alt-fill"></i>&nbsp<b>Drop Off Location:</b> <span id="drop-off-location-result"></span></div>
 				<div><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Pick Up Date:</b> <span id="pick-up-date-result"></span></div>
-				<div><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Return Date:</b> <span id="return-date-result"></span></div>
+				<div id="return-date"><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Return Date:</b> <span id="return-date-result"></span></div>
 				<div><i class="bi bi-clock-fill"></i>&nbsp<b>Pick Up time:</b> <span id="pick-up-time-result"></span></div>
-				<div><i class="bi bi-clock-fill"></i>&nbsp<b>Return time:</b> <span id="return-time-result"></span></div>
-				<div><i class="bi bi-people-fill"></i>&nbsp<b>People:</b> <span id="people-result"></span></div>
+				<div id="return-time"><i class="bi bi-clock-fill"></i>&nbsp<b>Return time:</b> <span id="return-time-result"></span></div>
+				<div id="adults"><i class="bi bi-people-fill"></i>&nbsp<b>Adults:</b> <span id="adults-result"></span></div>
+				<div id="babies"><i class="bi bi-people-fill"></i>&nbsp<b>Babies:</b> <span id="babies-result"></span></div>
+				<div id="booster"><i class="bi bi-people-fill"></i>&nbsp<b>Booster:</b> <span id="booster-result"></span></div>
 			</div>
 		  </div>
           <div class="col-md-8 mb-md-5">
-			<div class="container">
+			<div class="container" id="airport">
 				<h2 class="text-center">Route</h2>
 				<form action="#" class="bg-light p-5 contact-form was-validated" id="contactInformationForm">
 					<div class="row">
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control is-invalid" placeholder="Flight Number" required>
+							<input type="text" class="form-control is-invalid" id="flightnumber" placeholder="Flight Number" required>
+							<div class="valid-feedback"></div>
+							<div class="invalid-feedback">This field is required.</div>
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control is-invalid" placeholder="Hotel Name or Adress" required>
+							<input type="text" class="form-control is-invalid" id="address" placeholder="Hotel Name or Address" required>
+							<div class="valid-feedback"></div>
+							<div class="invalid-feedback">This field is required.</div>
 						</div>
 					</div>
 				</form>
@@ -96,17 +101,25 @@
 			<h2 class="text-center">Contact Information</h2>
 			<form action="#" class="bg-light p-5 contact-form was-validated" id="contactInformationForm">
               <div class="form-group">
-                <input type="text" class="form-control is-invalid" id="fullName" placeholder="Full Name" required>
+                <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+				<div class="valid-feedback"></div>
+				<div class="invalid-feedback">This field is required.</div>
               </div>
 			  
               <div class="form-group">
-                <input type="text" class="form-control" id="email" placeholder="Your Email" required>
+                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+				<div class="valid-feedback"></div>
+				<div class="invalid-feedback">This field is required.</div>
               </div>
 			  <div class="form-group">
-                <input type="text" class="form-control" id="emailConfirmation" placeholder="Confirm Your Email" required>
+                <input type="email" class="form-control" id="emailConfirmation" placeholder="Confirm Your Email" required>
+				<div class="valid-feedback"></div>
+				<div class="invalid-feedback">This field is required.</div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="mobilePhone" placeholder="Mobile Phone" required>
+                <input class="form-control" id="mobilePhone" placeholder="(+30) Mobile Phone" pattern="[0-9]+" required>
+				<div class="valid-feedback"></div>
+				<div class="invalid-feedback">This field is required.</div>
               </div>
               <div class="form-group text-center">
 				<button type="submit" class="btn btn-primary py-3 px-5 vertical-center" onclick="vm.submit()">Submit</button>

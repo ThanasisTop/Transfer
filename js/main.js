@@ -297,9 +297,9 @@
 	  'format': 'd/m/yyyy',
 	  'autoclose': true
 	});
-	$('#time_pick').timepicker();
+	$('#time_pick').timepicker({'step':15});
 
-	$('#time_return').timepicker();
+	$('#time_return').timepicker({'step':15});
 
 
 })(jQuery);
