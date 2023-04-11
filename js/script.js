@@ -296,7 +296,7 @@ function bookingOnLoad(){
 	vm.initialize();
 	
 	vm.submit=function(){
-		vm.fullName = document.getElementById('fullName');
+		vm.fullName = document.getElementById('fullName').value;
 		vm.yourEmail= document.getElementById('email').value;
 		vm.emailConfirmation = document.getElementById('emailConfirmation').value;
 		vm.mobilePhone = document.getElementById('mobilePhone').value;
@@ -304,10 +304,19 @@ function bookingOnLoad(){
 		vm.address = document.getElementById('address').value;
 		
 		
+		if(!vm.pickUpLoc && !vm.dropOffLoc && !vm.pickUpDate && !vm.pickUpTime){
+			alert('You didnt select Location, Date and Time');
+			return window.location.href="index.html";
+		}
+		
+		if(!vm.fullName || !vm.yourEmail || !vm.emailConfirmation || !vm.mobilePhone){
+			alert('Please fill the Contact Information Form');
+			return;
+		}
+		
 		if(vm.yourEmail != vm.emailConfirmation){
 			alert('Confirmation email is different with email');
-			document.getElementById('emailConfirmation').value="";
-			return;
+			return document.getElementById('emailConfirmation').value="";
 		}
 		
 		if(document.getElementById('airport').style.display!="none" && (!vm.address || !vm.flightNumber)){
@@ -316,6 +325,7 @@ function bookingOnLoad(){
 		}
 		
 		alert('Your booking submitted successfully');
+		localStorage.clear();
 		window.location.href="index.html";
 	}
 	
