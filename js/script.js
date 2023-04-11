@@ -316,6 +316,7 @@ function bookingOnLoad(){
 		}
 		
 		alert('Your booking submitted successfully');
+		window.location.href="index.html";
 	}
 	
 }
