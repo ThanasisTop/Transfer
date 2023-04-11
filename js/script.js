@@ -324,9 +324,53 @@ function bookingOnLoad(){
 			return;
 		}
 		
-		alert('Your booking submitted successfully');
-		localStorage.clear();
-		window.location.href="index.html";
+		//alert('Your booking submitted successfully');
+		//localStorage.clear();
+		vm.message = "<b>----Booking Information----</b><br>"+
+					 "<b>Pick-Up Location:</b> "+vm.pickUpLoc+"<br>"+ 
+		             "<b>Drop-Off Location:</b>  "+vm.dropOffLoc+"<br> "+
+		             "<b>Pick Up Date:</b> "+vm.pickUpDate+"<br> "+
+		             "<b>Return Date:</b> "+vm.returnDate+"<br>"+
+		             "<b>Pick Up Time:</b> "+vm.pickUpTime+"<br>"+
+		             "<b>Return Time:</b> "+vm.returnTime+"<br>"+
+		             "<b>Adults:</b> "+vm.adults+"<br>"+
+					 "<b>Children:</b> "+vm.children+"<br>"+
+					 "<b>Infants:</b> "+vm.infants+"<br>"+
+					 "<b>----Contact Information----</b><br>"+
+					 "<b>Full Name:</b> "+vm.fullName+"<br>"+ 
+		             "<b>Email:</b>  "+vm.yourEmail+"<br>"+
+		             "<b>Mobile Phone:</b> "+vm.mobilePhone
+					 "<b>Flight Number:</b> "+vm.flightNumber+"<br>"+
+					 "<b>Hotel Address:</b> "+vm.address;
+					 
+		vm.sendEmail(vm.message);
+		
 	}
 	
+	vm.sendEmail=function(mailBody, sender){
+		
+		vm.mail={ 
+				Host : "smtp.elasticemail.com",
+				Username : "sakis444450@gmail.com",
+				Password : "16F078803014ED5EBCB72B4AE091253858EC",
+				To : "sakis530@hotmail.com",
+				From : "sakis444450@gmail.com",
+				Subject : "Booking",
+				Body : "" 
+				};
+					
+		vm.mail['Body']=mailBody;	
+		
+		Email.send(vm.mail).then(
+			function(message){
+				if(message=="OK"){
+					alert('Email sended successfully. Your booking submitted!'); 
+					localStorage.clear();
+					window.location.href="index.html";
+				}
+				else
+					alert('Email failed. Your booking was not submitted.');
+			}
+		);
+	}
 }
