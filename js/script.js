@@ -57,6 +57,7 @@ function bookingOnLoad(){
 	vm.initialize=function(){
 		vm.Locations={
 			547:"Chania airport",
+			  1:"Chania port",
 			567:"Heraklion airport",
 			552:"Heraklion port",
 			571:"Agia Marina (Chania)",
