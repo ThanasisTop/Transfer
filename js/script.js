@@ -6,8 +6,8 @@ function createBooking(){
 	  const pickUpTimeValue = document.getElementById('time_pick').value;
 	  const returnTimeValue = document.getElementById('time_return').value;
 	  const adultsValue = document.getElementById('adults').value;
-	  const babiesValue = document.getElementById('babies').value;
-	  const boosterValue = document.getElementById('booster').value;
+	  const childrenValue = document.getElementById('children').value;
+	  const infantsValue = document.getElementById('infants').value;
 	  
 	  localStorage.setItem('pickUpLocValue', pickUpLocValue);
 	  localStorage.setItem('dropOffLocValue', dropOffLocValue);
@@ -16,8 +16,8 @@ function createBooking(){
 	  localStorage.setItem('pickUpTimeValue', pickUpTimeValue);
 	  localStorage.setItem('returnTimeValue', returnTimeValue);
 	  localStorage.setItem('adultsValue', adultsValue);
-	  localStorage.setItem('babiesValue', babiesValue);
-	  localStorage.setItem('boosterValue', boosterValue);
+	  localStorage.setItem('childrenValue', childrenValue);
+	  localStorage.setItem('infantsValue', infantsValue);
 	  
 	  if(pickUpDateValue=="" || pickUpLocValue=="" || pickUpTimeValue ==""){
 		alert("Please complete the form");
@@ -257,8 +257,8 @@ function bookingOnLoad(){
 		vm.pickUpTime = localStorage.getItem('pickUpTimeValue');
 		vm.returnTime = localStorage.getItem('returnTimeValue');
 		vm.adults = localStorage.getItem('adultsValue');
-		vm.babies = localStorage.getItem('babiesValue');
-		vm.booster = localStorage.getItem('boosterValue');
+		vm.children = localStorage.getItem('childrenValue');
+		vm.infants = localStorage.getItem('infantsValue');
 		
 		document.getElementById('pick-up-location-result').textContent=vm.pickUpLoc;
 		document.getElementById('drop-off-location-result').textContent=vm.dropOffLoc;
@@ -267,8 +267,8 @@ function bookingOnLoad(){
 		document.getElementById('pick-up-time-result').textContent=vm.pickUpTime;
 		document.getElementById('return-time-result').textContent=vm.returnTime;
 		document.getElementById('adults-result').textContent=vm.adults;
-		document.getElementById('babies-result').textContent=vm.babies;
-		document.getElementById('booster-result').textContent=vm.booster;
+		document.getElementById('children-result').textContent=vm.children;
+		document.getElementById('infants-result').textContent=vm.infants;
 		
 		document.getElementById('airport').style.display="none";
 		
@@ -277,12 +277,12 @@ function bookingOnLoad(){
 			document.getElementById('airport').style.display="block";
 		}
 		
-		if(vm.babies=="0"){
-			document.getElementById('babies').style.display="none";
+		if(vm.children=="0"){
+			document.getElementById('children').style.display="none";
 		}
 		
-		if(vm.booster=="0"){
-			document.getElementById('booster').style.display="none";
+		if(vm.infants=="0"){
+			document.getElementById('infants').style.display="none";
 		}
 		
 		if(vm.returnTime==""){
@@ -304,16 +304,18 @@ function bookingOnLoad(){
 		vm.address = document.getElementById('address').value;
 		
 		
-		console.log(vm.flightNumber);
-		
 		if(vm.yourEmail != vm.emailConfirmation){
 			alert('Confirmation email is different with email');
+			document.getElementById('emailConfirmation').value="";
 			return;
 		}
 		
 		if(document.getElementById('airport').style.display!="none" && (!vm.address || !vm.flightNumber)){
 			alert("Please complite Flight Number and Hotel Name or Address");
+			return;
 		}
+		
+		alert('Your booking submitted successfully');
 	}
 	
 }

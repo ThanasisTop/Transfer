@@ -63,33 +63,34 @@
 	<section class="ftco-section contact-section">
       <div class="container">
         <div class="row block-4 justify-content-center mb-5">
-			
-		  <div class="col-md-4 mb-md-5">
-		  <h2 class="text-center">Summary</h2>
-			<div class="bg-light p-5">
-				<div><i class="bi bi-geo-alt-fill"></i>&nbsp<b>Pick Up Location:</b> <span id="pick-up-location-result"></span></div>
-				<div><i class="bi bi-geo-alt-fill"></i>&nbsp<b>Drop Off Location:</b> <span id="drop-off-location-result"></span></div>
-				<div><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Pick Up Date:</b> <span id="pick-up-date-result"></span></div>
-				<div id="return-date"><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Return Date:</b> <span id="return-date-result"></span></div>
-				<div><i class="bi bi-clock-fill"></i>&nbsp<b>Pick Up time:</b> <span id="pick-up-time-result"></span></div>
-				<div id="return-time"><i class="bi bi-clock-fill"></i>&nbsp<b>Return time:</b> <span id="return-time-result"></span></div>
-				<div id="adults"><i class="bi bi-people-fill"></i>&nbsp<b>Adults:</b> <span id="adults-result"></span></div>
-				<div id="babies"><i class="bi bi-people-fill"></i>&nbsp<b>Babies:</b> <span id="babies-result"></span></div>
-				<div id="booster"><i class="bi bi-people-fill"></i>&nbsp<b>Booster:</b> <span id="booster-result"></span></div>
+		  <div class="col-md-4 mb-md-5 pt-4">
+			<div class="container">
+				<h2 class="text-center">Summary</h2>
+				<div class="bg-light p-5">
+					<div><i class="bi bi-geo-alt-fill"></i>&nbsp<b>Pick Up Location:</b> <span id="pick-up-location-result"></span></div>
+					<div><i class="bi bi-geo-alt-fill"></i>&nbsp<b>Drop Off Location:</b> <span id="drop-off-location-result"></span></div>
+					<div><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Pick Up Date:</b> <span id="pick-up-date-result"></span></div>
+					<div id="return-date"><i class="bi bi-calendar-week-fill"></i>&nbsp<b>Return Date:</b> <span id="return-date-result"></span></div>
+					<div><i class="bi bi-clock-fill"></i>&nbsp<b>Pick Up time:</b> <span id="pick-up-time-result"></span></div>
+					<div id="return-time"><i class="bi bi-clock-fill"></i>&nbsp<b>Return time:</b> <span id="return-time-result"></span></div>
+					<div id="adults"><i class="bi bi-people-fill"></i>&nbsp<b>Adults:</b> <span id="adults-result"></span></div>
+					<div id="children"><i class="bi bi-people-fill"></i>&nbsp<b>Children:</b> <span id="children-result"></span></div>
+					<div id="infants"><i class="bi bi-people-fill"></i>&nbsp<b>Infants:</b> <span id="infants-result"></span></div>
+				</div>
 			</div>
 		  </div>
           <div class="col-md-8 mb-md-5">
 			<div class="container" id="airport">
 				<h2 class="text-center">Route</h2>
-				<form action="#" class="bg-light p-5 contact-form was-validated" id="contactInformationForm">
+				<form action="#" class="bg-light p-5 contact-form was-validated" id="flightForm">
 					<div class="row">
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control is-invalid" id="flightnumber" placeholder="Flight Number" required>
+							<input type="text" class="form-control" id="flightnumber" placeholder="Flight Number" required>
 							<div class="valid-feedback"></div>
 							<div class="invalid-feedback">This field is required.</div>
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control is-invalid" id="address" placeholder="Hotel Name or Address" required>
+							<input type="text" class="form-control" id="address" placeholder="Hotel Name or Address" required>
 							<div class="valid-feedback"></div>
 							<div class="invalid-feedback">This field is required.</div>
 						</div>

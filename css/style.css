@@ -9046,11 +9046,11 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 6em 0;
+  padding: 10em 10em;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
-      padding: 13em 0; } }
+      padding: 12em 0; } }
 
 .ftco-no-pt {
   padding-top: 0; }
