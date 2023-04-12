@@ -343,23 +343,23 @@ function bookingOnLoad(){
 					 "<b>Flight Number:</b> "+vm.flightNumber+"<br>"+
 					 "<b>Hotel Address:</b> "+vm.address;
 					 
-		vm.sendEmail(vm.message);
-		
-	}
-	
-	vm.sendEmail=function(mailBody, sender){
-		
 		vm.mail={ 
 				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
 				To : "sakis530@hotmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "Booking",
 				Body : "" 
-				};
-					
-		vm.mail['Body']=mailBody;	
+				};		
+
+		vm.mail['Body']=vm.message;			
+		vm.sendEmail(vm.mail);
 		
-		Email.send(vm.mail).then(
+	};
+	
+	
+	vm.sendEmail=function(mail,){
+		
+		Email.send(mail).then(
 			function(message){
 				if(message=="OK"){
 					alert('Email sended successfully. Your booking submitted!'); 
@@ -370,5 +370,44 @@ function bookingOnLoad(){
 					alert('Email failed. Your booking was not submitted.');
 			}
 		);
-	}
+	};
+}
+
+function contactOnLoad(){
+	vm=this;
+	vm.submitContactEmail=function(){
+		vm.contactName = document.getElementById('contactFullName').value;
+		vm.contactEmail = document.getElementById('contactEmail').value;
+		vm.contactSubject = document.getElementById('contactSubject').value;
+		vm.contactMessage = document.getElementById('contactMessage').value;
+		
+		vm.mail={ 
+				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
+				To : "sakis530@hotmail.com",
+				From : "sakis444450@gmail.com",
+				Subject : "",
+				Body : "" 
+				};		
+				
+		vm.mail['Subject']=vm.contactSubject;
+		vm.mail['Body']="<b>Name: </b>"+vm.contactName+"<br>"+
+						"<b>Email: </b>"+vm.contactEmail+"<br>"+
+						vm.contactMessage;		
+				
+		vm.sendContactEmail(vm.mail);
+	};
+	
+	vm.sendContactEmail=function(mail){
+		
+		Email.send(mail).then(
+			function(message){
+				if(message=="OK"){
+					alert('Email sended successfully!'); 
+					location.reload();
+				}
+				else
+					alert('Email failed.');
+			}
+		);
+	};
 }
