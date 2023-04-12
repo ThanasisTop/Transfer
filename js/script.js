@@ -339,7 +339,7 @@ function bookingOnLoad(){
 					 "<b>----Contact Information----</b><br>"+
 					 "<b>Full Name:</b> "+vm.fullName+"<br>"+ 
 		             "<b>Email:</b>  "+vm.yourEmail+"<br>"+
-		             "<b>Mobile Phone:</b> "+vm.mobilePhone
+		             "<b>Mobile Phone:</b> "+vm.mobilePhone+"<br>"+
 					 "<b>Flight Number:</b> "+vm.flightNumber+"<br>"+
 					 "<b>Hotel Address:</b> "+vm.address;
 					 
@@ -350,9 +350,7 @@ function bookingOnLoad(){
 	vm.sendEmail=function(mailBody, sender){
 		
 		vm.mail={ 
-				Host : "smtp.elasticemail.com",
-				Username : "sakis444450@gmail.com",
-				Password : "16F078803014ED5EBCB72B4AE091253858EC",
+				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
 				To : "sakis530@hotmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "Booking",
