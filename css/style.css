@@ -2096,7 +2096,8 @@ fieldset:disabled a.btn {
 .btn-secondary {
   color: #fff;
   background-color: #6c757d;
-  border-color: #6c757d; }
+  border-color: #6c757d;
+   }
   .btn-secondary:hover {
     color: #fff;
     background-color: #5a6268;
@@ -2116,7 +2117,7 @@ fieldset:disabled a.btn {
     .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-secondary.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
-      box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);}
 
 .btn-success {
   color: #fff;
@@ -9874,4 +9875,12 @@ textarea.form-control {
   height:100%;
   width:100%;
   position:absolute;
+}
+
+.btn-secondary.myButton{
+  border-radius: 5px 5px 30px 30px;
+}
+
+#rcorners1 {
+  border-radius: 5px 5px 20px 20px;
 }
