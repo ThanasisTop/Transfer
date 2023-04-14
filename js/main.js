@@ -294,12 +294,19 @@
 
 
 	$('#book_pick_date,#return_date').datepicker({
-	  'format': 'd/m/yyyy',
+	  'format': 'd-m-yyyy',
+	  'timeZone': true, 
 	  'autoclose': true
 	});
-	$('#time_pick').timepicker({'step':15});
+	$('#time_pick').timepicker({
+		'scrollDefault': 'now',
+		'timeFormat': 'H:i',
+		'step':15});
 
-	$('#time_return').timepicker({'step':15});
+	$('#time_return').timepicker({
+		'scrollDefault': 'now',
+		'timeFormat': 'H:i',
+		'step':15});
 
 
 })(jQuery);

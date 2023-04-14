@@ -9884,3 +9884,28 @@ textarea.form-control {
 #rcorners1 {
   border-radius: 5px 5px 20px 20px;
 }
+
+.icon-bar {
+  position: fixed;
+  top: 80%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 85%;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.whatsapp {
+  background: green;
+  color: #fff;
+  border-radius: 50%;
+  opacity: 1;
+}

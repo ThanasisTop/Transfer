@@ -1,51 +1,92 @@
-function createBooking(){
-	  const pickUpLocValue = document.getElementById('pick-up-location').value;
-	  const dropOffLocValue = document.getElementById('drop-off-location').value;
-	  const pickUpDateValue = document.getElementById('book_pick_date').value;
-	  const returnDateValue = document.getElementById('return_date').value;
-	  const pickUpTimeValue = document.getElementById('time_pick').value;
-	  const returnTimeValue = document.getElementById('time_return').value;
-	  const adultsValue = document.getElementById('adults').value;
-	  const childrenValue = document.getElementById('children').value;
-	  const infantsValue = document.getElementById('infants').value;
-	  
-	  localStorage.setItem('pickUpLocValue', pickUpLocValue);
-	  localStorage.setItem('dropOffLocValue', dropOffLocValue);
-	  localStorage.setItem('pickUpDateValue', pickUpDateValue);
-	  localStorage.setItem('returnDateValue', returnDateValue);
-	  localStorage.setItem('pickUpTimeValue', pickUpTimeValue);
-	  localStorage.setItem('returnTimeValue', returnTimeValue);
-	  localStorage.setItem('adultsValue', adultsValue);
-	  localStorage.setItem('childrenValue', childrenValue);
-	  localStorage.setItem('infantsValue', infantsValue);
-	  
-	  if(pickUpDateValue=="" || pickUpLocValue=="" || pickUpTimeValue ==""){
-		alert("Please complete the form");
-		return;
-	  }
-	 
-	  window.location.href="book.html";
-	 
-}
 
 function indexOnLoad(){
 	
 	vm=this;
 	vm.initialize=function(){
-		document.getElementById("time_return").disabled=true;
-		document.getElementById("return_date").disabled=true;
+		document.getElementById('timereturn').style.display="none";
+		document.getElementById('datereturn').style.display="none";
+		
+		vm.currentDate = new Date();
+		
 	}
 	vm.initialize();
 	
-	vm.disableField=function(){
-		if(document.getElementById("time_return").disabled==false && document.getElementById("return_date").disabled==false){
-			document.getElementById("time_return").disabled=true;
-			document.getElementById("return_date").disabled=true;
+	vm.enableField=function(){
+		if(document.getElementById("timereturn").style.display=="none"){
+			document.getElementById('timereturn').style.display="block";
+			document.getElementById('datereturn').style.display="block";
 			return;
 		}
-		document.getElementById("time_return").disabled=false;
-		document.getElementById("return_date").disabled=false;
+		document.getElementById('timereturn').style.display="none";
+		document.getElementById('datereturn').style.display="none";
+		document.getElementById('time_return').value="";
+		document.getElementById('return_date').value="";
+	}
+	
+	vm.createBooking=function(){
 		
+	  vm.pickUpLocValue = document.getElementById('pick-up-location').value;
+	  vm.dropOffLocValue = document.getElementById('drop-off-location').value;
+	  vm.pickUpDateValue = document.getElementById('book_pick_date').value;
+	  vm.returnDateValue = document.getElementById('return_date').value;
+	  vm.pickUpTimeValue = document.getElementById('time_pick').value;
+	  vm.returnTimeValue = document.getElementById('time_return').value;
+	  vm.adultsValue = document.getElementById('adults').value;
+	  vm.childrenValue = document.getElementById('children').value;
+	  vm.infantsValue = document.getElementById('infants').value;
+	  
+	 
+	  vm.date = vm.pickUpDateValue.split('-')[1]+'-'+vm.pickUpDateValue.split('-')[0]+'-'+vm.pickUpDateValue.split('-')[2];
+	  vm.pickUpDate = new Date(vm.date);
+	  vm.pickUpDate.setHours(vm.pickUpTimeValue.split(':')[0]);
+	  vm.pickUpDate.setMinutes(vm.pickUpTimeValue.split(':')[1]);
+	  
+	  
+	  localStorage.setItem('pickUpLocValue', vm.pickUpLocValue);
+	  localStorage.setItem('dropOffLocValue',vm.dropOffLocValue);
+	  localStorage.setItem('pickUpDateValue',vm.pickUpDateValue);
+	  localStorage.setItem('returnDateValue',vm.returnDateValue);
+	  localStorage.setItem('pickUpTimeValue',vm.pickUpTimeValue);
+	  localStorage.setItem('returnTimeValue',vm.returnTimeValue);
+	  localStorage.setItem('adultsValue', vm.adultsValue);
+	  localStorage.setItem('childrenValue', vm.childrenValue);
+	  localStorage.setItem('infantsValue', vm.infantsValue);
+	  
+	  
+	  
+	  if(vm.pickUpDateValue=="" || vm.pickUpLocValue=="" || vm.pickUpTimeValue ==""|| vm.dropOffLocValue==""){
+		alert("Please complete the form");
+		return;
+	  }
+	  
+	  if(vm.pickUpLocValue==vm.dropOffLocValue){
+		 alert("Pick-Up location is the same with Drop-Off location.");
+	     return document.getElementById('drop-off-location').value=""; 
+	  }
+	  
+	  if(vm.pickUpDate<vm.currentDate){
+		  alert('Your pick up date is invalid!')
+		  return;
+	  }
+	  
+	  if(vm.pickUpDate==vm.currentDate){
+		  alert('Your booking must be at least 24 hours before pick up date!')
+		  return;
+	  }
+	  
+	  if(vm.pickUpDate>vm.currentDate){
+		  
+		  var diff =(vm.pickUpDate.getTime() - vm.currentDate.getTime()) / 1000;
+			diff /= (60 * 60);
+			var roundDiff =  Math.abs(Math.round(diff));
+			if(roundDiff<24){
+				alert('Your booking must be at least 24 hours before pick up date!')
+				return document.getElementById('time_pick').value="";
+			}
+		    
+	  }
+	 
+	  window.location.href="book.html";
 	}
 	
 }
@@ -302,6 +343,7 @@ function bookingOnLoad(){
 		vm.mobilePhone = document.getElementById('mobilePhone').value;
 		vm.flightNumber = document.getElementById('flightnumber').value;
 		vm.address = document.getElementById('address').value;
+		vm.comments = document.getElementById('comments').value;
 		
 		
 		if(!vm.pickUpLoc && !vm.dropOffLoc && !vm.pickUpDate && !vm.pickUpTime){
@@ -341,7 +383,8 @@ function bookingOnLoad(){
 		             "<b>Email:</b>  "+vm.yourEmail+"<br>"+
 		             "<b>Mobile Phone:</b> "+vm.mobilePhone+"<br>"+
 					 "<b>Flight Number:</b> "+vm.flightNumber+"<br>"+
-					 "<b>Hotel Address:</b> "+vm.address;
+					 "<b>Hotel Address:</b> "+vm.address+"<br>"+
+					 "<b>Comments:</b> "+vm.comments;
 					 
 		vm.mail={ 
 				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
