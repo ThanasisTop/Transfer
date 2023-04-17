@@ -9891,7 +9891,7 @@ textarea.form-control {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  padding-left: 85%;
+  left: calc(80%);
 }
 
 .icon-bar a {
@@ -9907,5 +9907,4 @@ textarea.form-control {
   background: green;
   color: #fff;
   border-radius: 50%;
-  opacity: 1;
 }
