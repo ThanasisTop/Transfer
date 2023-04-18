@@ -8882,13 +8882,10 @@ h1, h2, h3, h4, h5,
     height: 600px; } }
 
 .services-section {
-  position: relative; }
+  position: relative; 
+  margin-top: 110px !important;}
   .services-section .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     content: '';
     opacity: .7;
     background: #000000; }
@@ -9047,11 +9044,11 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 10em 10em;
+  padding: 3em 10em;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
-      padding: 12em 0; } }
+      padding: 6em 0; } }
 
 .ftco-no-pt {
   padding-top: 0; }
