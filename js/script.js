@@ -34,7 +34,8 @@ function indexOnLoad(){
 	  vm.adultsValue = document.getElementById('adults').value;
 	  vm.childrenValue = document.getElementById('children').value;
 	  vm.infantsValue = document.getElementById('infants').value;
-	  
+	  vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+		
 	 
 	  vm.date = vm.pickUpDateValue.split('-')[1]+'-'+vm.pickUpDateValue.split('-')[0]+'-'+vm.pickUpDateValue.split('-')[2];
 	  vm.pickUpDate = new Date(vm.date);
@@ -55,22 +56,26 @@ function indexOnLoad(){
 	  
 	  
 	  if(vm.pickUpDateValue=="" || vm.pickUpLocValue=="" || vm.pickUpTimeValue ==""|| vm.dropOffLocValue==""){
-		alert("Please complete the form");
+		document.getElementById('message').innerHTML = "Please complete the form!";
+		vm.alertModal.show();
 		return;
 	  }
 	  
 	  if(vm.pickUpLocValue==vm.dropOffLocValue){
-		 alert("Pick-Up location is the same with Drop-Off location.");
+		 document.getElementById('message').innerHTML = "Pick-Up location is the same with Drop-Off location!";
+		 vm.alertModal.show();
 	     return document.getElementById('drop-off-location').value=""; 
 	  }
 	  
 	  if(vm.pickUpDate<vm.currentDate){
-		  alert('Your pick up date is invalid!')
+		  document.getElementById('message').innerHTML = "Your pick up date is invalid!";
+		  vm.alertModal.show();
 		  return;
 	  }
 	  
 	  if(vm.pickUpDate==vm.currentDate){
-		  alert('Your booking must be at least 24 hours before pick up date!')
+		  document.getElementById('message').innerHTML = "Your booking must be at least 24 hours before pick up date!";
+		  vm.alertModal.show();
 		  return;
 	  }
 	  
@@ -80,7 +85,8 @@ function indexOnLoad(){
 			diff /= (60 * 60);
 			var roundDiff =  Math.abs(Math.round(diff));
 			if(roundDiff<24){
-				alert('Your booking must be at least 24 hours before pick up date!')
+				document.getElementById('message').innerHTML = "Your booking must be at least 24 hours before pick up date!";
+				vm.alertModal.show();
 				return document.getElementById('time_pick').value="";
 			}
 		    
@@ -347,70 +353,90 @@ function bookingOnLoad(){
 		
 		
 		if(!vm.pickUpLoc && !vm.dropOffLoc && !vm.pickUpDate && !vm.pickUpTime){
-			alert('You didnt select Location, Date and Time');
-			return window.location.href="index.html";
+			vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+			document.getElementById('message').innerHTML = "You didnt select Location, Date and Time";
+			document.getElementById('alertImage').innerHTML ="<img src=\"images/exclamation-mark.png\" alt=\"exclamation-mark\" width=\"80\" height=\"80\">";
+			vm.alertModal.show();
+			return;
 		}
 		
 		if(!vm.fullName || !vm.yourEmail || !vm.emailConfirmation || !vm.mobilePhone){
-			alert('Please fill the Contact Information Form');
+			vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+			document.getElementById('message').innerHTML = "Please fill the Contact Information Form";
+			document.getElementById('alertImage').innerHTML ="<img src=\"images/exclamation-mark.png\" alt=\"exclamation-mark\" width=\"80\" height=\"80\">";
+			vm.alertModal.show();
 			return;
 		}
 		
 		if(vm.yourEmail != vm.emailConfirmation){
-			alert('Confirmation email is different with email');
+			vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+			document.getElementById('message').innerHTML = "Confirmation email is different with email";
+			document.getElementById('alertImage').innerHTML ="<img src=\"images/exclamation-mark.png\" alt=\"exclamation-mark\" width=\"80\" height=\"80\">";
+			vm.alertModal.show();
 			return document.getElementById('emailConfirmation').value="";
 		}
 		
 		if(document.getElementById('airport').style.display!="none" && (!vm.address || !vm.flightNumber)){
-			alert("Please complite Flight Number and Hotel Name or Address");
+			vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+			document.getElementById('message').innerHTML = "Please complite Flight Number and Hotel Name or Address";
+			document.getElementById('alertImage').innerHTML ="<img src=\"images/exclamation-mark.png\" alt=\"exclamation-mark\" width=\"80\" height=\"80\">";
+			vm.alertModal.show();
 			return;
 		}
 		
-		//alert('Your booking submitted successfully');
-		//localStorage.clear();
-		vm.message = "<b>----Booking Information----</b><br>"+
-					 "<b>Pick-Up Location:</b> "+vm.pickUpLoc+"<br>"+ 
-		             "<b>Drop-Off Location:</b>  "+vm.dropOffLoc+"<br> "+
-		             "<b>Pick Up Date:</b> "+vm.pickUpDate+"<br> "+
-		             "<b>Return Date:</b> "+vm.returnDate+"<br>"+
-		             "<b>Pick Up Time:</b> "+vm.pickUpTime+"<br>"+
-		             "<b>Return Time:</b> "+vm.returnTime+"<br>"+
-		             "<b>Adults:</b> "+vm.adults+"<br>"+
-					 "<b>Children:</b> "+vm.children+"<br>"+
-					 "<b>Infants:</b> "+vm.infants+"<br>"+
-					 "<b>----Contact Information----</b><br>"+
-					 "<b>Full Name:</b> "+vm.fullName+"<br>"+ 
-		             "<b>Email:</b>  "+vm.yourEmail+"<br>"+
-		             "<b>Mobile Phone:</b> "+vm.mobilePhone+"<br>"+
-					 "<b>Flight Number:</b> "+vm.flightNumber+"<br>"+
-					 "<b>Hotel Address:</b> "+vm.address+"<br>"+
-					 "<b>Comments:</b> "+vm.comments;
-					 
-		vm.mail={ 
-				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-				To : "sakis530@hotmail.com",
-				From : "sakis444450@gmail.com",
-				Subject : "Booking",
-				Body : "" 
-				};		
-
-		vm.mail['Body']=vm.message;			
-		vm.sendEmail(vm.mail);
+		
+			vm.message = "<b>----Booking Information----</b><br>"+
+						"<b>Pick-Up Location:</b> "+vm.pickUpLoc+"<br>"+ 
+						"<b>Drop-Off Location:</b>  "+vm.dropOffLoc+"<br> "+
+						"<b>Pick Up Date:</b> "+vm.pickUpDate+"<br> "+
+						"<b>Return Date:</b> "+vm.returnDate+"<br>"+
+						"<b>Pick Up Time:</b> "+vm.pickUpTime+"<br>"+
+						"<b>Return Time:</b> "+vm.returnTime+"<br>"+
+						"<b>Adults:</b> "+vm.adults+"<br>"+
+						"<b>Children:</b> "+vm.children+"<br>"+
+						"<b>Infants:</b> "+vm.infants+"<br>"+
+						"<b>----Contact Information----</b><br>"+
+						"<b>Full Name:</b> "+vm.fullName+"<br>"+ 
+						"<b>Email:</b>  "+vm.yourEmail+"<br>"+
+						"<b>Mobile Phone:</b> "+vm.mobilePhone+"<br>"+
+						"<b>Flight Number:</b> "+vm.flightNumber+"<br>"+
+						"<b>Hotel Address:</b> "+vm.address+"<br>"+
+						"<b>Comments:</b> "+vm.comments;
+						
+			vm.mail={ 
+					SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
+					To : "Blacklanetransfers@gmail.com",
+					From : "sakis444450@gmail.com",
+					Subject : "Booking",
+					Body : "" 
+					};		
+	
+			vm.mail['Body']=vm.message;			
+			vm.sendEmail(vm.mail);
+		
 		
 	};
 	
+	vm.redirect=function() {
+		window.location.href="index.html";
+	}
 	
-	vm.sendEmail=function(mail,){
+	vm.sendEmail=function(mail){
 		
 		Email.send(mail).then(
 			function(message){
 				if(message=="OK"){
-					alert('Email sended successfully. Your booking submitted!'); 
+					vm.successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
+					document.getElementById('successMessage').innerHTML = "Email sended successfully. Your booking submitted! We will contact you as soon as possible to confirm your reservation.";
+					document.getElementById('successImage').innerHTML = "<img src=\"images/checked.png\" width=\"80px\" height=\"80px\">";
+					vm.successModal.show();
 					localStorage.clear();
-					window.location.href="index.html";
 				}
 				else
-					alert('Email failed. Your booking was not submitted.');
+					vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+					document.getElementById('message').innerHTML = "Email failed. Your booking was not submitted.";
+					document.getElementById('alertImage').innerHTML ="<img src=\"images/cancel.png\" alt=\"cancel\" width=\"80\" height=\"80\">";
+					vm.alertModal.show();
 			}
 		);
 	};
@@ -424,9 +450,11 @@ function contactOnLoad(){
 		vm.contactSubject = document.getElementById('contactSubject').value;
 		vm.contactMessage = document.getElementById('contactMessage').value;
 		
+		
+		
 		vm.mail={ 
 				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-				To : "sakis530@hotmail.com",
+				To : "Blacklanetransfers@gmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "",
 				Body : "" 
@@ -440,16 +468,26 @@ function contactOnLoad(){
 		vm.sendContactEmail(vm.mail);
 	};
 	
+	vm.redirect=function() {
+		window.location.href="index.html";
+	}
+	
 	vm.sendContactEmail=function(mail){
 		
 		Email.send(mail).then(
 			function(message){
 				if(message=="OK"){
-					alert('Email sended successfully!'); 
-					location.reload();
+					vm.successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
+					document.getElementById('successMessage').innerHTML = "Email sended successfully! We will contact you as soon as possible.";
+					document.getElementById('successImage').innerHTML = "<img src=\"images/checked.png\" width=\"80px\" height=\"80px\">";
+					vm.successModal.show();
+					//location.reload();
 				}
 				else
-					alert('Email failed.');
+					vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+					document.getElementById('message').innerHTML = "Email failed!";
+					document.getElementById('alertImage').innerHTML ="<img src=\"images/cancel.png\" alt=\"cancel\" width=\"80\" height=\"80\">";
+					vm.alertModal.show();
 			}
 		);
 	};
