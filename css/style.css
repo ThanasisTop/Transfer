@@ -8888,6 +8888,10 @@ h1, h2, h3, h4, h5,
   margin-top: 110px !important;}
   .services-section .overlay {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     content: '';
     opacity: .7;
     background: #000000; }
