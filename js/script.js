@@ -406,6 +406,7 @@ function bookingOnLoad(){
 			vm.mail={ 
 					SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
 					To : "Blacklanetransfers@gmail.com",
+					//To : "sakis530@hotmail.com",
 					From : "sakis444450@gmail.com",
 					Subject : "Booking",
 					Body : "" 
@@ -455,6 +456,7 @@ function contactOnLoad(){
 		vm.mail={ 
 				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
 				To : "Blacklanetransfers@gmail.com",
+				//To : "sakis530@hotmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "",
 				Body : "" 
