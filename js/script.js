@@ -116,7 +116,7 @@ function bookingOnLoad(){
 		    574:"Kolymbari (Chania)",
 		    577:"Paleochora (Chania)",
 		    572:"Platanias (Chania)",
-		    1485:"Aisha Petite Suites (Chania city)",
+		    /*1485:"Aisha Petite Suites (Chania city)",
             1486:"Almirida Beach (Almirida, Chania)",
             3128:"Almirida Residence Boutique (Almirida, Chania)",
             1487:"Ambassadors Residence (Chania city)",
@@ -162,13 +162,13 @@ function bookingOnLoad(){
 		    1510:"Thalassa Beach (Agia Marina, Chania)",
 		    3219:"Vantaris Palace (Georgioupolis, Chania)",
 		    1511:"Villa Thea (Almirida, Chania)",
-		    2406:"Villa Thea (Almirida,Chania)",
+		    2406:"Villa Thea (Almirida,Chania)",*/
 			566 :"Agia Pelagia (Heraklion)",
 		    551 :"Heraklion city",
 		    553 :"Hersonissos (Heraklion)",
 		    555 :"Malia (Heraklion)",
 		    554 :"Stalis (Heraklion)",
-			2408:"Abaton (Hersonissos)",
+			/*2408:"Abaton (Hersonissos)",
 			2414:"Aldemar Cretan Village (Hersonissos, Heraklion)",
 			2412:"Aldemar Knossos Royal (Hersonissos, Heraklion)",
 			3127:"Aldemar Knossos Villas (Hersonissos, Heraklion)",
@@ -201,7 +201,7 @@ function bookingOnLoad(){
 			2402:"Olive Green (Heraklion)",
 			3210:"Star Beach (Hersonissos, Heraklion)",
 			3211:"Stella Island Resort (Hersonissos, Heraklion)",
-			3212:"Stella Palace Resort (Hersonissos, Heraklion)",
+			3212:"Stella Palace Resort (Hersonissos, Heraklion)",*/
 			562 :"Adele (Rethymnon)",  
 			148 :"Adelianos Kampos (Rethymnon)",
 			565 :"Bali (Rethymnon)",
@@ -211,7 +211,7 @@ function bookingOnLoad(){
 			561 :"Platanias (Rethymnon)",
 			550 :"Rethymnon city",
 			563 :"Skaleta (Rethymnon)",
-			2387:"Achillion Palace (Rethymnon)", 
+			/*2387:"Achillion Palace (Rethymnon)", 
 			590 :"Aegean Sentido Pearl (Rethymnon)",
 			3126:"Ammos Suites (Rethymnon city)", 
 			3131:"Antica Dimora Suites (Rethymnon city)", 
@@ -292,7 +292,7 @@ function bookingOnLoad(){
             2380:"Veneto (Rethymnon)",
             3220:"Vila Casa Atimamo (Rethymnon city)",
             3221:"Vista Del Porto Luxury Suites (Rethymnon city)",
-            3222:"White Swan (Rethymnon city)"
+            3222:"White Swan (Rethymnon city)"*/
 		};
                 
 

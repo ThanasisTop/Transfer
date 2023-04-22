@@ -296,7 +296,8 @@
 	$('#book_pick_date,#return_date').datepicker({
 	  'format': 'd-m-yyyy',
 	  'timeZone': true, 
-	  'autoclose': true
+	  'autoclose': true,
+	  startDate: '-0d'
 	});
 	$('#time_pick').timepicker({
 		'scrollDefault': 'now',
