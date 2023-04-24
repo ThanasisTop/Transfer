@@ -37,16 +37,43 @@
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	        <ul class="navbar-nav">
+	          <li class="navbar-nav nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	          <!--<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>-->
 	          <!--<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>-->
 	          <!--<li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>-->
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item"><div id="google_translate_element"></div></li>
+			  <!-- <li class="nav-item"> -->
+				<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+					<!-- Discover -->
+				<!-- </a> -->
+				<!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> -->
+					<!-- <a class="dropdown-item" href="#">Rethymno</a> -->
+					<!-- <a class="dropdown-item" href="#">Chania</a> -->
+					<!-- <a class="dropdown-item" href="#">Heraklion</a> -->
+					<!-- <a class="dropdown-item" href="#">Lasithi</a> -->
+				<!-- </div> -->
+			  <!-- </li> -->
+			  <li class="nav-item">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Tours
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+					<a class="dropdown-item" href="tourpacks.html">Tour Packs</a>
+					<a class="dropdown-item" href="privatetours.html">Private Tours</a>
+				</div>
+			  </li>
+			  <li class="nav-item"><div id="google_translate_element"></div></li>
 	        </ul>
 	      </div>
+		  <!-- <div> -->
+			<!-- <ul class="navbar-nav"> -->
+				<!-- <li class="nav-item"><a href="#" type="button" class="nav-link" onclick="vm.translateToFr()">FR</a></li> -->
+				<!-- <li class="nav-item"><a href="#" class="nav-link" onclick="vm.translateToGer()">GER</a></li> -->
+				<!-- <li class="nav-item"><a href="#" class="nav-link" onclick="vm.translateToRu()">RU</a></li> -->
+			<!-- </ul> -->
+		  <!-- </div> -->
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -71,9 +98,9 @@
           <div class="col-lg-2 col"></div>
           <div class="col-lg-4 col-md-6 mt-0 mt-md-5 d-flex">
           	<form action="#" class="request-form ftco-animate" id="indexBookForm">
-          		<h2>Make your trip</h2>
+          		<h2 id="MakeYourTripEn">Make your trip</h2>
 	    				<div class="form-group">
-	    					<label for="" class="label">Pick-up location</label>
+	    					<label for="" class="label" id="PickUpLocationEn">Pick-up location</label>
 	    					<select id="pick-up-location" class="form-control" aria-label="select pick-up location" >
   									<option value="" hidden>City, Airport, Station, etc</option>
 									<optgroup label="Airports & Ports">
@@ -280,10 +307,15 @@
                                             <option value="3221">Vista Del Porto Luxury Suites (Rethymnon city)</option>
                                             <option value="3222">White Swan (Rethymnon city)</option>-->
                                     </optgroup>
+									<optgroup label="Lasithi">
+                                            <option value="2">Agios Nikolaos (Lasithi)</option>
+                                            <option value="3">Elounda (Lasithi)</option>
+                                            <option value="4">Elounda Plaka (Lasithi)</option>
+                                    </optgroup>
 							</select>
 	    				</div>
 	    				<div class="form-group">
-	    					<label for="" class="label">Drop-off location</label>
+	    					<label for="" class="label" id="DropOffLocationEn">Drop-off location</label>
 	    					<select id="drop-off-location" class="form-control" aria-label="select drop-off location" >
   									<option value="" hidden>City, Airport, Station, etc</option>
   									<optgroup label="Airports & Ports">
@@ -490,39 +522,44 @@
                                             <option value="3221">Vista Del Porto Luxury Suites (Rethymnon city)</option>
                                             <option value="3222">White Swan (Rethymnon city)</option>-->
                                     </optgroup>
+									<optgroup label="Lasithi">
+                                            <option value="2">Agios Nikolaos (Lasithi)</option>
+                                            <option value="3">Elounda (Lasithi)</option>
+                                            <option value="4">Elounda Plaka (Lasithi)</option>
+                                    </optgroup>
 							</select>
 	    				</div>
 	    	   <div class="d-flex">
 	    		  <div class="form-group mr-2">
-	                <label for="" class="label">Pick-up date</label>
+	                <label for="" class="label" id="PickUpDateEn">Pick-up date</label>
 	                <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
 	              </div>
 	              <div class="form-group ml-2" id="datereturn">
-	                <label for="" class="label">Return date</label>
+	                <label for="" class="label" id="ReturnDateEn">Return date</label>
 	                <input type="text" class="form-control" id="return_date" placeholder="Date">
 	              </div>
               </div>
               <div class="d-flex">
               	<div class="form-group mr-2">
-                	<label for="" class="label">Pick-up time</label>
+                	<label for="" class="label" id="PickUpTimeEn">Pick-up time</label>
                 	<input type="text" class="form-control" id="time_pick" placeholder="Time">
               	</div>
               	<div class="form-group ml-2" id="timereturn">
-                	<label for="" class="label">Return time</label>
+                	<label for="" class="label" id="ReturnTimeEn">Return time</label>
                 	<input type="text" class="form-control" id="time_return" placeholder="Time">
                 </div>
               </div>
 			  <div class="d-flex">
 				<div class="custom-control custom-switch">
 					<input type="checkbox" class="custom-control-input" onclick="vm.enableField()" id="returnSwitch" >
-					<label class="custom-control-label" for="returnSwitch">Return</label>
+					<label class="custom-control-label" for="returnSwitch" id="ReturnEn">Return</label>
 				</div>
 			  </div>
 			  <div class="d-flex">
 				<div class="form-group">
 				  <div class="row">
 				  	<div class="col-sm-4">
-				  		<label for="adults" class="label">Adults</label>
+				  		<label for="adults" class="label" id="AdultsEn">Adults</label>
 	    		  			<select class="form-control" id="adults" aria-label="select adults">
 	    		  				<option value="1">1</option>
 	    		  				<option value="2">2</option>
@@ -535,7 +572,7 @@
 	    		  			</select>
 				  	</div>
 				  	<div class="col-sm-4">
-				  		<label for="children" class="label">Children</label>
+				  		<label for="children" class="label" id="ChildrenEn">Children</label>
 	    		  			<select class="form-control" id="children" aria-label="select children">
 	    		  				<option selected value="0">0</option>
 				  				<option value="1">1</option>
@@ -549,7 +586,7 @@
 	    		  			</select>
 				  	</div>
 				  	<div class="col-sm-4">
-				  		<label for="infants" class="label">Ιnfants</label>
+				  		<label for="infants" class="label" id="ΙnfantsEn">Ιnfants</label>
 	    		  			<select class="form-control" id="infants" aria-label="select infants">
 	    		  				<option selected value="0">0</option>
 	    		  				<option value="1">1</option>
@@ -568,7 +605,7 @@
 						<a type="button" class="btn btn-secondary" id="rcorners1" href="#" role="button" onclick="createBooking()">Book</a>	
 					</div>
 					<div>
-						<p class="text-danger pt-3">*Your booking must be at least 24 hours before pick up date.</p>
+						<p class="text-danger pt-3" id="BookingClarificationEn">*Your booking must be at least 24 hours before pick up date.</p>
 				    </div>
 				  </div>			  
 				</div>
@@ -1247,7 +1284,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">BlacklaneTransfers</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Blacklane transfers provides Transfers & Tours with a private driver to personal and business clients in Crete Island.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -1261,6 +1298,8 @@
               <ul class="list-unstyled">
                 <!--<li><a href="#" class="py-2 d-block">About</a></li>-->
                 <li><a href="contact.html" class="py-2 d-block">Contact Us</a></li>
+				<li><a href="tourpacks.html" class="py-2 d-block">Tour Packs</a></li>
+                <li><a href="privatetours.html" class="py-2 d-block">Private Tours</a></li>
                 <!--<li><a href="pricing.html" class="py-2 d-block">Pricing</a></li>-->
                 <!--<li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
                 <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>-->
@@ -1338,6 +1377,9 @@
   <script type="text/javascript"
            src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
 

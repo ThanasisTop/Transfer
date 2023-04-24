@@ -95,6 +95,22 @@ function indexOnLoad(){
 	  window.location.href="book.html";
 	}
 	
+	vm.translateToFr = function(){
+		document.getElementById("MakeYourTripEn").innerHTML = "Faites votre voyage";
+		document.getElementById("PickUpLocationEn").innerHTML = "Lieu de ramassage";
+		document.getElementById("DropOffLocationEn").innerHTML = "Point de chute";
+		document.getElementById("PickUpDateEn").innerHTML = "Date de ramassage";
+		document.getElementById("ReturnDateEn").innerHTML = "Date de retour";
+		document.getElementById("PickUpTimeEn").innerHTML = "Heure de ramassage";
+		document.getElementById("ReturnTimeEn").innerHTML = "Heure de retour";
+		document.getElementById("ReturnEn").innerHTML = "Retour";
+		document.getElementById("AdultsEn").innerHTML = "Adultes";
+		document.getElementById("ChildrenEn").innerHTML = "Enfants";
+		document.getElementById("ΙnfantsEn").innerHTML = "Nourrissons";
+		document.getElementById("rcorners1").innerHTML = "Réservation";
+		document.getElementById("BookingClarificationEn").innerHTML = "Votre réservation doit être au moins 24 heures avant la date de prise en charge.";
+	}
+	
 }
 
 
@@ -293,8 +309,10 @@ function bookingOnLoad(){
             3220:"Vila Casa Atimamo (Rethymnon city)",
             3221:"Vista Del Porto Luxury Suites (Rethymnon city)",
             3222:"White Swan (Rethymnon city)"*/
-		};
-                
+			2	:"Agios Nikolaos (Lasithi)",
+			3	:"Elounda (Lasithi)",
+            4	:"Elounda Plaka (Lasithi)"
+		};      
 
 		vm.form = document.getElementById('contactInformationForm')
 		vm.pickUpLoc = vm.Locations[localStorage.getItem('pickUpLocValue')];
@@ -441,6 +459,8 @@ function bookingOnLoad(){
 			}
 		);
 	};
+
+	
 }
 
 function contactOnLoad(){
