@@ -357,6 +357,11 @@ function bookingOnLoad(){
 		if(vm.returnDate==""){
 			document.getElementById('return-date').style.display="none";
 		}
+		
+		if(vm.adults=="9-20"){
+			document.getElementById('vehicle').innerHTML ='<div><b>Vehicle:</b> Mercedes Sprinter Limo Vip <img src=\"images/limobus.png\" alt="" class=\"img-responsive\"></div>';
+		}
+			
 	}
 	vm.initialize();
 	
