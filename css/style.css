@@ -9956,3 +9956,14 @@ textarea.form-control {
     padding-right: 1.1rem;
   }
 }
+
+@media(max-width:992px){
+  /* On mobile set datepicker to viewport center*/
+  #datepicker {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+            transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+  }
+}

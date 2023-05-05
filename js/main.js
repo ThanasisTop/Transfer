@@ -293,23 +293,25 @@
   });
 
 
-	$('#book_pick_date,#return_date').datepicker({
+	$('#return_date_modal,#book_pick_date_modal').datepicker({
 	  'format': 'd-m-yyyy',
 	  'timeZone': true, 
 	  'autoclose': true,
 	  startDate: '-0d'
 	});
-	$('#time_pick').timepicker({
-		'scrollDefault': 'now',
-		'timeFormat': 'H:i',
-		'step':15});
+	// $('#time_pick').timepicker({
+		// 'scrollDefault': 'now',
+		// 'timeFormat': 'H:i',
+		// 'step':15});
 
-	$('#time_return').timepicker({
-		'scrollDefault': 'now',
-		'timeFormat': 'H:i',
-		'step':15});
+	// $('#time_return').timepicker({
+		// 'scrollDefault': 'now',
+		// 'timeFormat': 'H:i',
+		// 'step':15});
 
 	
+
+	$('#datepicker').datepicker({ uiLibrary: 'bootstrap4', modal: true, header: true, footer: true });
 	
 
 })(jQuery);

@@ -5,7 +5,6 @@ function indexOnLoad(){
 	vm.initialize=function(){
 		document.getElementById('timereturn').style.display="none";
 		document.getElementById('datereturn').style.display="none";
-		
 		vm.currentDate = new Date();
 		
 	}
@@ -35,7 +34,7 @@ function indexOnLoad(){
 	  vm.childrenValue = document.getElementById('children').value;
 	  vm.infantsValue = document.getElementById('infants').value;
 	  vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
-		
+	  
 	 
 	  vm.date = vm.pickUpDateValue.split('-')[1]+'-'+vm.pickUpDateValue.split('-')[0]+'-'+vm.pickUpDateValue.split('-')[2];
 	  vm.pickUpDate = new Date(vm.date);
@@ -111,6 +110,15 @@ function indexOnLoad(){
 		document.getElementById("BookingClarificationEn").innerHTML = "Votre réservation doit être au moins 24 heures avant la date de prise en charge.";
 	}
 	
+	vm.pickDateSaveChanges=function(){
+		document.getElementById("book_pick_date").value=document.getElementById("book_pick_date_modal").value;
+		$("#PickUpDateModal").modal("hide");
+	}
+	
+	vm.returnDateSaveChanges=function(){
+		document.getElementById("return_date").value=document.getElementById("return_date_modal").value;
+		$("#ReturnDateModal").modal("hide");
+	}
 }
 
 
