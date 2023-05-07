@@ -585,18 +585,18 @@ function readMoreOnLoad(){
 	}
 	
 	if(vm.id==2){
-		document.getElementById('readMoreSection').style.backgroundImage = 'url(\'images/westcretebeach.jpg\')';
+		document.getElementById('readMoreSection').style.backgroundImage = 'url(\'images/balos.jpg\')';
 		document.getElementById('readMoreTitle').innerHTML = '<h1 id="readMoreTitle" class="mb-3 bread">Balos Beach Tour</h1>';
 		
 		document.getElementById('sectionBgImage').style.backgroundImage = 'url(\'images/westcretebeach.jpg\')';
 		document.getElementById('detailsTitle').innerHTML = '<h2 id="detailsTitle" class="mb-4">Balos Beach Tour</h2>';
 		document.getElementById('readMoreDesc').innerHTML = '<p id="readMoreDesc">Balos Beach - a truly wonderful and mesmering place! After we pick you up from your hotel, we will head west through the outskirts of Chania to the port of Kastelli. From the port of Kissamos a boat will take you to the small island called Gramvousa, which is known for its imposing Venetian castle and breathtaking views.</p>';
 		
-		document.getElementById('price1').innerHTML = '<h2 id="price1" style="color: #DAA520;">120 €</h2>';
+		document.getElementById('price1').innerHTML = '<h2 id="price1" style="color: #DAA520;">280 €</h2>';
 		document.getElementById('extrahour1').innerHTML = '<p class="text-muted" id="extrahour1">Extra hour 35 €</p>';
-		document.getElementById('price2').innerHTML = '<h2 id="price2" style="color: #DAA520;">180 €</h2>';
+		document.getElementById('price2').innerHTML = '<h2 id="price2" style="color: #DAA520;">360 €</h2>';
 		document.getElementById('extrahour2').innerHTML = '<p class="text-muted" id="extrahour2">Extra hour 45 €</p>';
-		document.getElementById('price3').innerHTML = '<h2 id="price3" style="color: #DAA520;">260 €</h2>';
+		document.getElementById('price3').innerHTML = '<h2 id="price3" style="color: #DAA520;">440 €</h2>';
 		document.getElementById('extrahour3').innerHTML = '<p class="text-muted" id="extrahour3">Extra hour 55 €</p>';
 		
 		document.getElementById('includedListItem').innerHTML = 
@@ -615,7 +615,7 @@ function readMoreOnLoad(){
 	}
 	
 	if(vm.id==3){
-		document.getElementById('readMoreSection').style.backgroundImage = 'url(\'images/minoanhistory.jpg\')';
+		document.getElementById('readMoreSection').style.backgroundImage = 'url(\'images/knossos-palace.jpg\')';
 		document.getElementById('readMoreTitle').innerHTML = '<h1 id="readMoreTitle" class="mb-3 bread">Knossos Palace & Heraklion Town & Museum</h1>';
 		
 		document.getElementById('sectionBgImage').style.backgroundImage = 'url(\'images/minoanhistory.jpg\')';
@@ -675,10 +675,10 @@ function readMoreOnLoad(){
 	}
 	
 	if(vm.id==5){
-		document.getElementById('readMoreSection').style.backgroundImage = 'url(\'images/imbros.jpg\')';
+		document.getElementById('readMoreSection').style.backgroundImage = 'url(\'images/imbros-gorge.jpg\')';
 		document.getElementById('readMoreTitle').innerHTML = '<h1 id="readMoreTitle" class="mb-3 bread">Imbros Gorge & Frangokastello</h1>';
 		
-		document.getElementById('sectionBgImage').style.backgroundImage = 'url(\'images/fragokastelo.jpg\')';
+		document.getElementById('sectionBgImage').style.backgroundImage = 'url(\'images/imbros.jpg\')';
 		document.getElementById('detailsTitle').innerHTML = '<h2 id="detailsTitle" class="mb-4">Imbros Gorge & Frangokastello</h2>';
 		document.getElementById('readMoreDesc').innerHTML = '<p id="readMoreDesc">The gorge of Imbros is the second most popular gorge for walkers in Crete after thegorge of Samaria.This because is much easier to walk the 8 km distance, the descent is around 600m and the average walking time is about 2.5 hours...</p>';
 		
