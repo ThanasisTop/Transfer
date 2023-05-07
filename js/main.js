@@ -129,6 +129,7 @@
 					navbar.removeClass('scrolled sleep');
 				}
 			} 
+			
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');	
@@ -313,6 +314,16 @@
 
 	$('#datepicker').datepicker({ uiLibrary: 'bootstrap4', modal: true, header: true, footer: true });
 	
+	$(function () { 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 150) { 
+            $('.navbar .navbar-brand img').attr('src','images/logo3.jpg');
+        }
+        if ($(this).scrollTop() < 150) { 
+            $('.navbar .navbar-brand img').attr('src','images/logowhite.png');
+        }
+    })
+});
 
 })(jQuery);
 
