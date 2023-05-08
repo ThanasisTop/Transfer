@@ -314,6 +314,7 @@
 
 	$('#datepicker').datepicker({ uiLibrary: 'bootstrap4', modal: true, header: true, footer: true });
 	
+	//changes logo on navbar when scroll 
 	$(function () { 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 150) { 
