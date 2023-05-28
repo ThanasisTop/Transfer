@@ -9967,3 +9967,9 @@ textarea.form-control {
     -webkit-transform:translate(-50%, -50%);
   }
 }
+.img-thumbnail{
+border: 0px;
+box-shadow: none;
+border-radius:0px;
+background-color: white;
+}

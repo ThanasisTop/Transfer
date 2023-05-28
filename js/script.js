@@ -529,7 +529,7 @@ function contactOnLoad(){
 }
 
 
-function tourPacksOnLoad(){
+function privateTourPacksOnLoad(){
 	vm=this;
 	
 	vm.readMore = function(id){
