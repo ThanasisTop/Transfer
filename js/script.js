@@ -333,6 +333,7 @@ function bookingOnLoad(){
 		vm.children = localStorage.getItem('childrenValue');
 		vm.infants = localStorage.getItem('infantsValue');
 		
+		
 		document.getElementById('pick-up-location-result').textContent=vm.pickUpLoc;
 		document.getElementById('drop-off-location-result').textContent=vm.dropOffLoc;
 		document.getElementById('pick-up-date-result').textContent=vm.pickUpDate;
@@ -436,8 +437,8 @@ function bookingOnLoad(){
 						
 			vm.mail={ 
 					SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-					To : "Blacklanetransfers@gmail.com",
-					//To : "sakis530@hotmail.com",
+					//To : "Blacklanetransfers@gmail.com",
+					To : "sakis530@hotmail.com",
 					From : "sakis444450@gmail.com",
 					Subject : "Booking",
 					Body : "" 
@@ -473,7 +474,35 @@ function bookingOnLoad(){
 		);
 	};
 
-	
+	// vm.payment=function(){
+		// var options = {
+			// "key": "rzp_test_8Ms5fHEia7zI6Y",
+			// "amount": vm.price, // Example: 2000 paise = INR 20
+			// "currency": "EUR",
+			// "name": "BlackLane Transfers",
+			// "description": "description",
+			// "image": "images/paymentlogo.jpg",// COMPANY LOGO
+			// "handler": function (response) {
+				// console.log(response);
+				// vm.submit();
+				// // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+			// },
+			// "prefill": {
+				// "name": document.getElementById('fullName').value, // pass customer name
+				// "email": document.getElementById('email').value,// customer email
+				// "contact": document.getElementById('mobilePhone').value //customer phone no.
+			// },
+			// "notes": {
+				// "address": "address" //customer address 
+			// },
+			// "theme": {
+				// "color": "black" // screen color
+			// }
+		// };
+		// console.log(options);
+		// var propay = new Razorpay(options);
+		// propay.open();
+	// }
 }
 
 function contactOnLoad(){
@@ -488,8 +517,8 @@ function contactOnLoad(){
 		
 		vm.mail={ 
 				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-				To : "Blacklanetransfers@gmail.com",
-				//To : "sakis530@hotmail.com",
+				//To : "Blacklanetransfers@gmail.com",
+				To : "sakis530@hotmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "",
 				Body : "" 
