@@ -436,8 +436,8 @@ function bookingOnLoad(){
 						"<b>Comments:</b> "+vm.comments;
 						
 			vm.mail={ 
-					SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-					To : "sakis530@hotmail.com",
+					SecureToken : "fb67986e-07ed-4cd5-881f-8e45f32fbbfc",
+					To : "blacklanetransfers@gmail.com",
 					//To : "sakis530@hotmail.com",
 					From : "sakis444450@gmail.com",
 					Subject : "Booking",
@@ -516,8 +516,8 @@ function contactOnLoad(){
 		
 		
 		vm.mail={ 
-				SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-				To : "Bill21_patelaros@yahoo.gr",
+				SecureToken : "fb67986e-07ed-4cd5-881f-8e45f32fbbfc",
+				To : "blacklanetransfers@gmail.com",
 				//To : "sakis530@hotmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "",
