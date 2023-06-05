@@ -437,7 +437,7 @@ function bookingOnLoad(){
 						
 			vm.mail={ 
 					SecureToken : "3bd12f23-2a46-4764-b0a9-dbf681ea319e",
-					To : "Bill21_patelaros@yahoo.gr",
+					To : "sakis530@hotmail.com",
 					//To : "sakis530@hotmail.com",
 					From : "sakis444450@gmail.com",
 					Subject : "Booking",
