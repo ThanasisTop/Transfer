@@ -459,17 +459,19 @@ function bookingOnLoad(){
 		Email.send(mail).then(
 			function(message){
 				if(message=="OK"){
+					
 					vm.successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
 					document.getElementById('successMessage').innerHTML = "Email sended successfully. Your booking submitted! We will contact you as soon as possible to confirm your reservation.";
 					document.getElementById('successImage').innerHTML = "<img src=\"images/checked.png\" width=\"80px\" height=\"80px\">";
 					vm.successModal.show();
 					localStorage.clear();
 				}
-				else
+				if(message!="OK"){
 					vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
 					document.getElementById('message').innerHTML = "Email failed. Your booking was not submitted.";
 					document.getElementById('alertImage').innerHTML ="<img src=\"images/cancel.png\" alt=\"cancel\" width=\"80\" height=\"80\">";
 					vm.alertModal.show();
+				}
 			}
 		);
 	};
@@ -547,11 +549,12 @@ function contactOnLoad(){
 					vm.successModal.show();
 					//location.reload();
 				}
-				else
+				if(message!="OK"){
 					vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
 					document.getElementById('message').innerHTML = "Email failed!";
 					document.getElementById('alertImage').innerHTML ="<img src=\"images/cancel.png\" alt=\"cancel\" width=\"80\" height=\"80\">";
 					vm.alertModal.show();
+				}
 			}
 		);
 	};
