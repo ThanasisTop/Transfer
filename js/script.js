@@ -436,9 +436,9 @@ function bookingOnLoad(){
 						"<b>Comments:</b> "+vm.comments;
 						
 			vm.mail={ 
-					SecureToken : "f5652dae-ef45-4e10-a1eb-628fc343d17f",
+					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
 					To : "blacklanetransfers@gmail.com",
-					From : "sakis444450@gmail.com",
+					From : "sakis530@hotmail.com",
 					Subject : "Booking",
 					Body : "" 
 					};		
@@ -480,26 +480,26 @@ function bookingOnLoad(){
 function contactOnLoad(){
 	vm=this;
 	vm.submitContactEmail=function(){
-		vm.contactName = document.getElementById('contactFullName').value;
-		vm.contactEmail = document.getElementById('contactEmail').value;
-		vm.contactSubject = document.getElementById('contactSubject').value;
-		vm.contactMessage = document.getElementById('contactMessage').value;
+		vm.contactName = document.getElementById("contactFullName").value;
+		vm.contactEmail = document.getElementById("contactEmail").value;
+		vm.contactSubject = document.getElementById("contactSubject").value;
+		vm.contactMessage = document.getElementById("contactMessage").value;
 		
 		
 		
 		vm.mail={ 
-				SecureToken : "f5652dae-ef45-4e10-a1eb-628fc343d17f", 
-				To : "blacklanetransfers@gmail.com",
-				From : "sakis444450@gmail.com",
-				Subject : "",
-				Body : "" 
-				};		
+					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
+					To : "blacklanetransfers@gmail.com",
+					From : "sakis530@hotmail.com",
+					Subject : "Booking",
+					Body : "" 
+					};		
 				
-		vm.mail['Subject']=vm.contactSubject;
-		vm.mail['Body']="<b>Name: </b>"+vm.contactName+"<br>"+
-						"<b>Email: </b>"+vm.contactEmail+"<br>"+
-						vm.contactMessage;		
-				
+		 vm.mail['Subject']=vm.contactSubject;
+		 vm.mail['Body']="<b>Name: </b>"+vm.contactName+"<br>"+
+						 "<b>Email: </b>"+vm.contactEmail+"<br>"+
+						 vm.contactMessage;		
+			
 		vm.sendContactEmail(vm.mail);
 	};
 	
@@ -516,7 +516,6 @@ function contactOnLoad(){
 					document.getElementById('successMessage').innerHTML = "Email sended successfully! We will contact you as soon as possible.";
 					document.getElementById('successImage').innerHTML = "<img src=\"images/checked.png\" width=\"80px\" height=\"80px\">";
 					vm.successModal.show();
-					//location.reload();
 				}
 				if(message!="OK"){
 					vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
