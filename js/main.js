@@ -316,15 +316,43 @@
 	
 	//changes logo on navbar when scroll 
 	$(function () { 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 150) { 
-            $('.navbar .navbar-brand img').attr('src','images/logo3.jpg');
-        }
-        if ($(this).scrollTop() < 150) { 
-            $('.navbar .navbar-brand img').attr('src','images/logowhite.png');
-        }
-    })
-});
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 150) { 
+				$('.navbar .navbar-brand img').attr('src','images/logo3.jpg');
+			}
+			if ($(this).scrollTop() < 150) { 
+				$('.navbar .navbar-brand img').attr('src','images/logowhite.png');
+			}
+		})
+	});
+
+	var sendContactEmail=function(mail){
+		
+		Email.send(mail).then(
+			function(message){
+				if(message=="OK"){
+					alert('OK')
+				}
+				if(message!="OK"){
+					alert('error')
+				}
+			}
+		);
+	};
+
+	$("#submitContactEmail").click(function(){
+		var mail={ 
+				SecureToken : "f5652dae-ef45-4e10-a1eb-628fc343d17f", 
+				To : "blacklanetransfers@gmail.com",
+				From : "sakis444450@gmail.com",
+				Subject : "",
+				Body : "" 
+		};	
+		
+		sendContactEmail(mail);
+	});
+	
+	
 
 })(jQuery);
 
