@@ -475,35 +475,6 @@ function bookingOnLoad(){
 		);
 	};
 
-	// vm.payment=function(){
-		// var options = {
-			// "key": "rzp_test_8Ms5fHEia7zI6Y",
-			// "amount": vm.price, // Example: 2000 paise = INR 20
-			// "currency": "EUR",
-			// "name": "BlackLane Transfers",
-			// "description": "description",
-			// "image": "images/paymentlogo.jpg",// COMPANY LOGO
-			// "handler": function (response) {
-				// console.log(response);
-				// vm.submit();
-				// // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
-			// },
-			// "prefill": {
-				// "name": document.getElementById('fullName').value, // pass customer name
-				// "email": document.getElementById('email').value,// customer email
-				// "contact": document.getElementById('mobilePhone').value //customer phone no.
-			// },
-			// "notes": {
-				// "address": "address" //customer address 
-			// },
-			// "theme": {
-				// "color": "black" // screen color
-			// }
-		// };
-		// console.log(options);
-		// var propay = new Razorpay(options);
-		// propay.open();
-	// }
 }
 
 function contactOnLoad(){
@@ -518,7 +489,7 @@ function contactOnLoad(){
 		
 		vm.mail={ 
 				SecureToken : "f5652dae-ef45-4e10-a1eb-628fc343d17f", 
-				To : "blacklanetransfers@gmail.com",
+				To : "blacklans@gmail.com",
 				From : "sakis444450@gmail.com",
 				Subject : "",
 				Body : "" 
