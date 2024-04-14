@@ -473,7 +473,7 @@ function contactOnLoad(){
 		
 		vm.mail={ 
 					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
-					To : "blacklanetransfers@gmail.com",
+					To : "",
 					From : "sakis530@hotmail.com",
 					Subject : "Booking",
 					Body : "" 
