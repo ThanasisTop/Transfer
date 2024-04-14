@@ -94,22 +94,6 @@ function indexOnLoad(){
 	  window.location.href="book.html";
 	}
 	
-	vm.translateToFr = function(){
-		document.getElementById("MakeYourTripEn").innerHTML = "Faites votre voyage";
-		document.getElementById("PickUpLocationEn").innerHTML = "Lieu de ramassage";
-		document.getElementById("DropOffLocationEn").innerHTML = "Point de chute";
-		document.getElementById("PickUpDateEn").innerHTML = "Date de ramassage";
-		document.getElementById("ReturnDateEn").innerHTML = "Date de retour";
-		document.getElementById("PickUpTimeEn").innerHTML = "Heure de ramassage";
-		document.getElementById("ReturnTimeEn").innerHTML = "Heure de retour";
-		document.getElementById("ReturnEn").innerHTML = "Retour";
-		document.getElementById("AdultsEn").innerHTML = "Adultes";
-		document.getElementById("ChildrenEn").innerHTML = "Enfants";
-		document.getElementById("ΙnfantsEn").innerHTML = "Nourrissons";
-		document.getElementById("rcorners1").innerHTML = "Réservation";
-		document.getElementById("BookingClarificationEn").innerHTML = "Votre réservation doit être au moins 24 heures avant la date de prise en charge.";
-	}
-	
 	vm.pickDateSaveChanges=function(){
 		document.getElementById("book_pick_date").value=document.getElementById("book_pick_date_modal").value;
 		$("#PickUpDateModal").modal("hide");
@@ -437,7 +421,7 @@ function bookingOnLoad(){
 						
 			vm.mail={ 
 					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
-					To : "blacklanetransfers@gmail.com",
+					To : "",
 					From : "sakis530@hotmail.com",
 					Subject : "Booking",
 					Body : "" 
