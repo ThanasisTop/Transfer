@@ -421,7 +421,7 @@ function bookingOnLoad(){
 						
 			vm.mail={ 
 					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
-					To : "",
+					To : "obsidiantransfer@gmail.com",
 					From : "sakis530@hotmail.com",
 					Subject : "Booking",
 					Body : "" 
@@ -473,7 +473,7 @@ function contactOnLoad(){
 		
 		vm.mail={ 
 					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
-					To : "",
+					To : "info@obsidiantransfers.gr",
 					From : "sakis530@hotmail.com",
 					Subject : "Booking",
 					Body : "" 
