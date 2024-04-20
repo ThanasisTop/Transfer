@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body onload="readMoreOnLoad()">
+  <body>
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -64,7 +64,7 @@
     <!-- END nav -->
     
     <section id="readMoreSection" class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
+      <div id="overlay" class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
@@ -89,6 +89,40 @@
 				</div>
 			</div>
 	</section>
+	<section class="ftco-section">
+      <div class="container">
+        <div class="row d-flex">
+		  <div class="col-sm-12 d-flex align-self-stretch ftco-animate">
+            <div class="media block-12 services">
+              <div class="media-body py-md-4">
+              	<div class="d-flex mb-3 align-items-center">
+	                <h1 class="heading mb-0 pl-3">Few words</h1>
+                </div>
+                <div class="media-body py-md-4">
+					<div class="icon d-flex">
+						<p id="details1"></p>
+					</div><br>
+					<div class="icon d-flex">
+						<p id="details2"></p>
+					</div><br>
+					<div class="icon d-flex">
+						<p id="details3"></p>
+					</div><br>
+					<div class="icon d-flex">
+						<p id="details4"></p>
+					</div><br>
+					<div class="icon d-flex">
+						<p id="details5"></p>
+					</div><br>
+					<div class="icon d-flex">
+						<p id="details6"></p>
+					</div>
+				</div>
+              </div>
+            </div>      
+          </div>
+        </div>
+    </section>	
     <section class="ftco-section">
       <div class="container">
       	<div class="row justify-content-center">
@@ -102,7 +136,7 @@
             <div class="media block-6 services">
               <div class="media-body py-md-4">
               	<div class="d-flex mb-3 align-items-center">
-	                <h2 class="heading mb-0 pl-3">Up to 3 persons</h2>
+	                <h2 class="heading mb-0 pl-3">Up to 4 passengers</h2>
                 </div>
                 <div class="media-body py-md-4 text-center">
 					<div class="icon d-flex align-items-center justify-content-center">
@@ -119,7 +153,7 @@
             <div class="media block-6 services">
               <div class="media-body py-md-4">
               	<div class="d-flex mb-3 align-items-center">
-	                <h2 class="heading mb-0 pl-3">Up to 8 persons</h2>
+	                <h2 class="heading mb-0 pl-3">Up to 8 passengers</h2>
                 </div>
 				<div class="media-body py-md-4 text-center">
 					<div class="icon d-flex align-items-center justify-content-center">
@@ -136,7 +170,7 @@
             <div class="media block-6 services">
               <div class="media-body py-md-4">
               	<div class="d-flex mb-3 align-items-center">
-	                <h2 class="heading mb-0 pl-3">Up to 20 persons</h2>
+	                <h2 class="heading mb-0 pl-3">Up to 21 passengers</h2>
                 </div>
 				<div class="media-body py-md-4 text-center">
 					<div class="icon d-flex align-items-center justify-content-center">
@@ -151,43 +185,7 @@
           </div>
         </div>
     </section>
-	<section class="ftco-section">
-      <div class="container">
-        <div class="row d-flex">
-		  <div class="col-sm-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	                <h1 class="heading mb-0 pl-3">Whats included</h1>
-                </div>
-                <div class="media-body py-md-4">
-					<div class="icon d-flex justify-content-center">
-						<ul class="list-group list-group-flush">
-							<div id="includedListItem"></div>
-						</ul>
-					</div>
-				</div>
-              </div>
-            </div>      
-          </div>
-          <div class="col-sm-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	                <h1 class="heading mb-0 pl-3">Whats not included</h1>
-                </div>
-				<div class="media-body py-md-4">
-					<div class="icon d-flex justify-content-center">
-						<ul class="list-group list-group-flush">
-							<div id="notIncludedListItem"></div>
-						</ul>
-					</div>
-				</div>
-              </div>
-            </div>      
-          </div>
-        </div>
-    </section>		
+		
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
 	  <div class="icon-bar">
@@ -282,7 +280,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/readmore.js"></script>
   
   </body>
 </html>
