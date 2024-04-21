@@ -513,7 +513,8 @@ function contactOnLoad(){
 }
 
 function privateTourPacks(id){
-	window.location.href=('./readmore.html?tourId=');
+	alert()
+	window.location.href=('./readmore.html?tourId='+id);
 }
 
 
