@@ -120,7 +120,7 @@
 	
 					<p>Begin your day with a serene drive from Chania to Heraklion, enjoying the enchanting views of the Cretan Sea and the unique landscapes of Crete.</p>
 					
-					<button type="button" class="btn btn-secondary" id="tourButton" value="1">Read More</button>
+					<button type="button" class="btn btn-secondary" id="tourButton" value="1">Read More value</button>
 					
 					</div>
 					</div>
@@ -391,7 +391,14 @@
 
     // Add event listener to the button
     document.getElementById('tourButton').addEventListener('click', function() {
-        privateTourPacks(this.value);
+		// Prevent the default behavior of the button
+        event.preventDefault();
+        
+        // Get the value of the button
+        var tourId = this.value;
+        
+        // Call the function with the button value
+        privateTourPacks(tourId);
     });
 	
 </script>
