@@ -514,13 +514,11 @@ function contactOnLoad(){
 	};
 }
 
-function privateTourOnLoad(){
-	
-	this.privateTourPacks=function privateTourPacks(id){
+function privateTourPacks(id){
 		alert()
-		window.location.href=('./readmore.html?tourId='+id);
-	}
+		//window.location.href=('./readmore.html?tourId='+id);
 }
+
 
 
 
