@@ -103,6 +103,8 @@ function indexOnLoad(){
 		document.getElementById("return_date").value=document.getElementById("return_date_modal").value;
 		$("#ReturnDateModal").modal("hide");
 	}
+	
+	
 }
 
 
@@ -512,9 +514,15 @@ function contactOnLoad(){
 	};
 }
 
-function privateTourPacks(id){
-	alert()
-	window.location.href=('./readmore.html?tourId='+id);
+function privateTourOnLoad(){
+	
+	this.privateTourPacks=function privateTourPacks(id){
+		alert()
+		window.location.href=('./readmore.html?tourId='+id);
+	}
 }
+
+
+
 
 
