@@ -2,7 +2,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const tourId = urlParams.get('tourId');
 
-getTour(tourId);
 
 function getTour(tourId){
 	
@@ -21,23 +20,23 @@ function getTour(tourId){
 		document.getElementById('price3').innerHTML = '<h2 id="price3" style="color: #DAA520;">440 €</h2>';
 		document.getElementById('extrahour3').innerHTML = '<p class="text-muted" id="extrahour3">Mini Bus</p>';
 		
-		document.getElementById('details1').innerHTML='<b>Route: </b>'+
+		document.getElementById('details1').innerHTML='<b><span class="icon icon-map-marker"></span> Route: </b>'+
 				'Begin your day with a serene drive from Chania to Heraklion, enjoying the enchanting views of the Cretan Sea and the unique landscapes of Crete.';
 				
 		document.getElementById('details2').innerHTML=
-				'<b>Photo Stop: </b>'+
+				'<b><span class="icon icon-map-marker"></span> Photo Stop: </b>'+
 				'Make a photo stop at a panoramic point 1 km before Rethymnon, where the breathtaking views of the surrounding area will captivate you.';
 				
-		document.getElementById('details3').innerHTML='<b>Knossos: </b>'+
+		document.getElementById('details3').innerHTML='<b><span class="icon icon-map-marker"></span> Knossos: </b>'+
 				'Visit the Palace of Knossos, the epicenter of Minoan civilization, where you\'ll discover the secrets of the ancient Minoans through a journey into history and mythology.';
 				
-		document.getElementById('details4').innerHTML='<b>Museum: </b>'+
+		document.getElementById('details4').innerHTML='<b><span class="icon icon-map-marker"></span> Museum: </b>'+
 				'Explore the Heraklion Archaeological Museum, which hosts exhibits spanning over 5,500 years of history, from the Minoan era to the Byzantine past.';
 				
 		document.getElementById('details5').innerHTML='<b><span class="icon icon-map-marker"></span> Heraklion: </b>'+
 				'Allow yourself some free time for exploration, shopping, and dining in the vibrant streets of Heraklion.';
 				
-		document.getElementById('details6').innerHTML='<b>Duration: </b>'+
+		document.getElementById('details6').innerHTML='<b><span class="icon icon-map-marker"></span> Duration: </b>'+
 				'The tour lasts approximately 9 hours, from 09:00 to 18:00.';
 	}
 	
@@ -384,3 +383,4 @@ function getTour(tourId){
 	}
 }
 
+getTour(tourId);
