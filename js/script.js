@@ -512,10 +512,13 @@ function contactOnLoad(){
 	};
 }
 
-function privateTourPacks(id){
-	alert()
-	window.location.href=('./readmore.html?tourId='+id);
-}
+// function privateTourPacks(id){
+	// alert()
+	// window.location.href=('./readmore.html?tourId='+id);
+// }
 
 
-
+privateTourPacks.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default action of the click event
+    alert(1); // Call the function with the parameter
+});
