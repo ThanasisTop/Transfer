@@ -119,9 +119,7 @@
 					<h2 class="mb-4">Chania - Heraklion</h2>
 	
 					<p>Begin your day with a serene drive from Chania to Heraklion, enjoying the enchanting views of the Cretan Sea and the unique landscapes of Crete.</p>
-					
-					<button type="button" class="btn btn-secondary" id="tourButton" value="1">Read More value</button>
-					
+					<a href="./readmore.html?tourId=1">Read More</a>
 					</div>
 					</div>
 				</div>
@@ -383,24 +381,6 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/script.js"></script>
-  <script>
-    // Define the function
-    function privateTourPacks(id){
-        window.location.href = './readmore.html?tourId=' + id;
-    }
-
-    // Add event listener to the button
-    document.getElementById('tourButton').addEventListener('click', function() {
-		// Prevent the default behavior of the button
-        event.preventDefault();
-        
-        // Get the value of the button
-        var tourId = this.value;
-        
-        // Call the function with the button value
-        privateTourPacks(tourId);
-    });
-	
-</script>
+  
   </body>
 </html>
