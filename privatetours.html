@@ -390,10 +390,10 @@
     }
 
     // Add event listener to the button
-    document.getElementById('tourButton1').addEventListener('click', function() {
+    document.getElementById('tourButton').addEventListener('click', function() {
         // Replace 'yourTourId' with the actual tour ID
-       
-        privateTourPacks(1);
+        var tourId = '1';
+        privateTourPacks(tourId);
     });
 	
 	document.getElementById('tourButton2').addEventListener('click', function() {
