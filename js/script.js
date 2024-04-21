@@ -512,10 +512,9 @@ function contactOnLoad(){
 	};
 }
 
+function privateTourPacks(id){
+	alert()
+	window.location.href=('./readmore.html?tourId='+id);
+}
 
-(function($) {
-	$( "#privateTourPacks" ).click(function() {
-		alert()
-	});
 
-})(jQuery);
