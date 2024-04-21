@@ -515,8 +515,8 @@ function contactOnLoad(){
 }
 
 function privateTourPacks(id){
-		alert()
-		//window.location.href=('./readmore.html?tourId='+id);
+		
+		window.location.href=('./readmore.html?tourId='+id);
 }
 
 
