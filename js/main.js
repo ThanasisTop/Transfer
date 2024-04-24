@@ -321,7 +321,7 @@
             $('.navbar .navbar-brand img').attr('src','images/logo3.jpg');
         }
         if ($(this).scrollTop() < 150) { 
-            $('.navbar .navbar-brand img').attr('src','images/logowhite.png');
+            $('.navbar .navbar-brand img').attr('src','images/obsidian-logo-no-bg.png');
         }
     })
 	});
