@@ -9,6 +9,7 @@ function indexOnLoad(){
 		
 	}
 	vm.initialize();
+	console.log(getCookie("pick-up-location"))
 	
 	vm.enableField=function(){
 		if(document.getElementById("timereturn").style.display=="none"){
@@ -41,6 +42,8 @@ function indexOnLoad(){
 	  vm.pickUpDate.setHours(vm.pickUpTimeValue.split(':')[0]);
 	  vm.pickUpDate.setMinutes(vm.pickUpTimeValue.split(':')[1]);
 	  
+	  
+	  setCookie("pick-up-location", vm.pickUpLocValue, 7, "/", "www.obsidiantransfers.gr");
 	  
 	  localStorage.setItem('pickUpLocValue', vm.pickUpLocValue);
 	  localStorage.setItem('dropOffLocValue',vm.dropOffLocValue);
@@ -430,7 +433,7 @@ function bookingOnLoad(){
 					};		
 	
 			vm.mail['Body']=vm.message;			
-			vm.sendEmail(vm.mail);
+			//vm.sendEmail(vm.mail);
 		
 		
 	};
@@ -517,6 +520,47 @@ function contactOnLoad(){
 function privateTourPacks(id){
 		
 		window.location.href=('./readmore.html?tourId='+id);
+}
+
+function setCookie(name, value, days, path, domain, secure) {
+    let cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    
+    if (days) {
+		alert()
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        cookie += "; expires=" + date.toUTCString();
+    }
+    
+    if (path) {
+        cookie += "; path=" + path;
+    }
+    
+    if (domain) {
+        cookie += "; domain=" + domain;
+    }
+    
+    if (secure) {
+        cookie += "; secure";
+    }
+    
+    document.cookie = cookie;
+}
+
+function deleteCookie(name){
+    setCookie(name, null, null);
+}
+function getCookie(name){
+    const cDecoded = decodeURIComponent(document.cookie);
+    const cArray = cDecoded.split("; ");
+    let result = null;
+    
+    cArray.forEach(element => {
+        if(element.indexOf(name) == 0){
+            result = element.substring(name.length + 1)
+        }
+    })
+    return result;
 }
 
 
