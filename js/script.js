@@ -43,7 +43,7 @@ function indexOnLoad(){
 	  vm.pickUpDate.setMinutes(vm.pickUpTimeValue.split(':')[1]);
 	  
 	  
-	  setCookie("pick-up-location", vm.pickUpLocValue, 7, "/", "www.obsidiantransfers.gr");
+	  //setCookie("pick-up-location", vm.pickUpLocValue, 7, "/", "www.obsidiantransfers.gr");
 	  
 	  localStorage.setItem('pickUpLocValue', vm.pickUpLocValue);
 	  localStorage.setItem('dropOffLocValue',vm.dropOffLocValue);
