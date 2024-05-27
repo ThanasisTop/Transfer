@@ -9,7 +9,6 @@ function indexOnLoad(){
 		
 	}
 	vm.initialize();
-	console.log(getCookie("pick-up-location"))
 	
 	vm.enableField=function(){
 		if(document.getElementById("timereturn").style.display=="none"){
@@ -43,7 +42,6 @@ function indexOnLoad(){
 	  vm.pickUpDate.setMinutes(vm.pickUpTimeValue.split(':')[1]);
 	  
 	  
-	  //setCookie("pick-up-location", vm.pickUpLocValue, 7, "/", "www.obsidiantransfers.gr");
 	  
 	  localStorage.setItem('pickUpLocValue', vm.pickUpLocValue);
 	  localStorage.setItem('dropOffLocValue',vm.dropOffLocValue);
@@ -433,7 +431,7 @@ function bookingOnLoad(){
 					};		
 	
 			vm.mail['Body']=vm.message;			
-			//vm.sendEmail(vm.mail);
+			vm.sendEmail(vm.mail);
 		
 		
 	};
@@ -526,7 +524,6 @@ function setCookie(name, value, days, path, domain, secure) {
     let cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
     
     if (days) {
-		alert()
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         cookie += "; expires=" + date.toUTCString();
