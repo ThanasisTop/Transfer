@@ -423,9 +423,9 @@ function bookingOnLoad(){
 						"<b>Comments:</b> "+vm.comments;
 						
 			vm.mail={ 
-					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
-					To : "obsidiantransfer@gmail.com",
-					From : "sakis530@hotmail.com",
+					SecureToken : "1f09fd72-c49e-4d18-8114-f768562c3313",
+					To : "info@obsidiantransfers.gr",
+					From : "info@obsidiantransfers.gr",
 					Subject : "Booking",
 					Body : "" 
 					};		
@@ -477,7 +477,7 @@ function contactOnLoad(){
 		vm.mail={ 
 					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
 					To : "info@obsidiantransfers.gr",
-					From : "sakis530@hotmail.com",
+					From : "info@obsidiantransfers.gr",
 					Subject : "Booking",
 					Body : "" 
 					};		
