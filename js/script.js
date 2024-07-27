@@ -475,10 +475,10 @@ function contactOnLoad(){
 		
 		
 		vm.mail={ 
-					SecureToken : "e423ce2a-a4db-4edf-b089-5d815ac80203",
+					SecureToken : "1f09fd72-c49e-4d18-8114-f768562c3313",
 					To : "info@obsidiantransfers.gr",
 					From : "info@obsidiantransfers.gr",
-					Subject : "Booking",
+					Subject : "",
 					Body : "" 
 					};		
 				
