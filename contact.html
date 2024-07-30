@@ -59,6 +59,11 @@
 			  
 	        </ul>
 	      </div>
+		  <div class="container">
+			<ul class="navbar-nav">
+				<li class="nav-item active" id="unsubmittedBooking"></li> 
+			</ul>
+		  </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -262,7 +267,11 @@
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-  
+  <script>
+	if(window.localStorage.length!=0){
+			document.getElementById('unsubmittedBooking').innerHTML = '<a href="book.html" class="nav-link"><img src="images/bell.png" alt="exclamation-mark" width="25" height="25">&nbspUnsubmitted Booking</a>';
+		}
+  </script>
     
   </body>
 </html>

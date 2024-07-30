@@ -42,12 +42,13 @@
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
             <!--<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>-->
-            <li class="nav-item"><a type="button" class="nav-link" href="./documents/prices.pdf" target="_blank" download>Pricing</a></li>
+            <!-- <li class="nav-item"><a type="button" class="nav-link" href="./documents/prices.pdf" target="_blank" download>Pricing</a></li> -->
             <!--<li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
             <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>-->
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             <!--<li class="nav-item"><a href="tourpacks.html" class="nav-link">Tour Packs</a></li>--> 
             <li class="nav-item"><a href="privatetours.html" class="nav-link">Private Tours</a></li> 
+            <!-- <li class="nav-item" id="unsubmittedBooking"></li>  -->
 	        </ul>
 			<!-- <div class="filter-dropdown"> -->
 				<!-- <button class="btn btn-secondary dropdown-toggle" style="background-color: transparent; border-color: transparent; cursor: default;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
@@ -62,13 +63,11 @@
 			<!-- </div> -->
 			
 	      </div>
-		  <!-- <div> -->
-			<!-- <ul class="navbar-nav"> -->
-				<!-- <li class="nav-item"><a href="#" type="button" class="nav-link" onclick="vm.translateToFr()">FR</a></li> -->
-				<!-- <li class="nav-item"><a href="#" class="nav-link" onclick="vm.translateToGer()">GER</a></li> -->
-				<!-- <li class="nav-item"><a href="#" class="nav-link" onclick="vm.translateToRu()">RU</a></li> -->
-			<!-- </ul> -->
-		  <!-- </div> -->
+		  <div class="container">
+			<ul class="navbar-nav">
+				<li class="nav-item active" id="unsubmittedBooking"></li> 
+			</ul>
+		  </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -1560,6 +1559,11 @@
   <!-- <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
   <script src="js/script.js"></script>
+  <script>
+	if(window.localStorage.length!=0){
+			document.getElementById('unsubmittedBooking').innerHTML = '<a href="book.html" class="nav-link"><img src="images/bell.png" alt="exclamation-mark" width="25" height="25">&nbspUnsubmitted Booking</a>';
+		}
+  </script>
   
   </body>
 </html>

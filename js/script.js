@@ -6,7 +6,6 @@ function indexOnLoad(){
 		document.getElementById('timereturn').style.display="none";
 		document.getElementById('datereturn').style.display="none";
 		vm.currentDate = new Date();
-		
 	}
 	vm.initialize();
 	

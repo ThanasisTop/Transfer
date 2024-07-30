@@ -1,5 +1,6 @@
 function contactOnLoad(){
 	vm=this;
+	
 	vm.submitContactEmail=function(){
 		vm.contactName = document.getElementById("contactFullName").value;
 		vm.contactEmail = document.getElementById("contactEmail").value;
