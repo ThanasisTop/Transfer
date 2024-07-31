@@ -32,6 +32,7 @@ function indexOnLoad(){
 	  vm.adultsValue = document.getElementById('adults').value;
 	  vm.childrenValue = document.getElementById('children').value;
 	  vm.infantsValue = document.getElementById('infants').value;
+	  
 	  vm.alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
 	  
 	 
@@ -41,6 +42,8 @@ function indexOnLoad(){
 	  vm.pickUpDate.setMinutes(vm.pickUpTimeValue.split(':')[1]);
 	  
 	  
+	  const ttl=86400000;
+	  var expiryDate=new Date().getTime()+ttl;
 	  
 	  localStorage.setItem('pickUpLocValue', vm.pickUpLocValue);
 	  localStorage.setItem('dropOffLocValue',vm.dropOffLocValue);
@@ -51,6 +54,7 @@ function indexOnLoad(){
 	  localStorage.setItem('adultsValue', vm.adultsValue);
 	  localStorage.setItem('childrenValue', vm.childrenValue);
 	  localStorage.setItem('infantsValue', vm.infantsValue);
+	  localStorage.setItem('expiryDate',expiryDate);
 	  
 	  
 	  

@@ -358,8 +358,13 @@
   <script src="js/script.js"></script>
   <script>
 	if(window.localStorage.length!=0){
+		if(new Date().getTime()>localStorage.getItem('expiryDate')){
+			localStorage.clear();
+		}
+		else{
 			document.getElementById('unsubmittedBooking').innerHTML = '<a href="book.html" class="nav-link"><img src="images/bell.png" alt="exclamation-mark" width="25" height="25">&nbspUnsubmitted Booking</a>';
 		}
+	}
   </script>
   </body>
 </html>
